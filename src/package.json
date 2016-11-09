@@ -1,0 +1,19 @@
+{
+  "name": "umpackadmin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "express": "4.14.0"
+  },
+  "devDependencies": {
+    "gulp-livereload": "3.8.1",
+    "gulp-nodemon": "2.2.1"
+  }
+}

@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab">
+        <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#roleContainer{{currentRole.id}}">
+          {{currentRole.name}}
+        </a>
+      </h4>
+    </div>
+    <div id="roleContainer{{currentRole.id}}" class="panel-collapse collapse" role="tabpanel">
+        <div class="panel-body">
+            <div>
+                <input [(ngModel)]="newAction.name" placeholder="action name">
+                <input [(ngModel)]="newAction.pattern" placeholder="url Pattern">
+                <div>
+                    <label>GET :
+                        <input type="checkbox" [(ngModel)]="newAction.get">
+                    </label>
+                    <label>POST :
+                        <input type="checkbox" [(ngModel)]="newAction.post">
+                    </label>
+                    <label>PUT :
+                        <input type="checkbox" [(ngModel)]="newAction.put">
+                    </label>
+                    <label>DELETE :
+                        <input type="checkbox" [(ngModel)]="newAction.delete">
+                    </label>
+                </div>
+                <button (click)="addNewAction()">add</button>
+            </div>
+            <ul>
+                <li *ngFor="let action of currentRole.actions">
+                    <b>{{action.name}}</b>  - {{action.pattern}}
+                    <div>
+                       <b>GET</b>:{{action.get}} <b>POST</b>:{{action.post}} <b>PUT</b>:{{action.put}} <b>DELETE</b>:{{action.delete}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
