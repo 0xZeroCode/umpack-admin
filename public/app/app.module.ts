@@ -12,25 +12,26 @@ import { RolesComponent } from './roles/roles.component';
 import { ActionsComponent } from './actions/actions.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './users/userDetails/userDetails.component';
+import { UserListItemComponent } from './users/userListItem/user-list-item.component';
 
 import { RoleService } from './roles/roles.service';
 import { ActionService } from './actions/actions.service';
 
 @NgModule({
-	imports: [
-		FormsModule,
-		BrowserModule,
-		RouterModule.forRoot([
-			{ path: '', redirectTo: '/roles', pathMatch: 'full' },
-			{ path: 'roles', component: RolesComponent },
-			{ path: 'users', component: UsersComponent }
-		]),
-		HttpModule//,
-		//InMemoryWebApiModule.forRoot(InMemoryDataService)
-	],
+    imports: [
+        FormsModule,
+        BrowserModule,
+        RouterModule.forRoot([
+            { path: '', redirectTo: '/roles', pathMatch: 'full' },
+            { path: 'roles', component: RolesComponent },
+            { path: 'users', component: UsersComponent }
+        ]),
+        HttpModule//,
+        //InMemoryWebApiModule.forRoot(InMemoryDataService)
+    ],
 
-	declarations: [AppComponent, RolesComponent, ActionsComponent, UsersComponent, UserDetailsComponent],
-	providers: [RoleService, ActionService],
-	bootstrap: [AppComponent]
+    declarations: [AppComponent, RolesComponent, ActionsComponent, UsersComponent, UserDetailsComponent, UserListItemComponent],
+    providers: [RoleService, ActionService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

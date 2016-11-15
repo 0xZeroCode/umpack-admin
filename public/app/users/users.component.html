@@ -1,2 +1,6 @@
 <h2>user list</h2>
-<user-details *ngFor="let user of userList" [currentUser]="user"></user-details>
+<!-- <user-details *ngFor="let user of userList" [currentUser]="user"></user-details> -->
+<div *ngFor="let user of userList">
+  <user-list-item [currentUser]="user" [allRoles]="allRoles"></user-list-item>
+  <br>
+</div>

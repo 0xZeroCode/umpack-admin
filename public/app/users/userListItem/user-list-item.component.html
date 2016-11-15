@@ -1,0 +1,26 @@
+<div class="user-list-item container">
+  <user-details [currentUser]="currentUser"></user-details>
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" [attr.data-target]="'#' + currentUser.userName + 'Modal'">View Roles</button>
+
+  <div class="modal fade" [attr.id]="currentUser.userName + 'Modal'" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">{{currentUser.userName}} roles</h4>
+        </div>
+        <div class="modal-body">
+          <div *ngFor="let roleCheckbox of roleCheckboxes">
+            {{roleCheckbox.role}}
+            <input type="checkbox" name="role" [(ngModel)]="roleCheckbox.value" (change)="toggleCheckbox(roleCheckbox)">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

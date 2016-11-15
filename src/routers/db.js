@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://172.17.7.92:27017/umpack');
 
 var ActionSchema = new Schema({
     name: String,
@@ -62,7 +61,7 @@ function loadRoles() {
                 return {
                     id: item._id,
                     name: item.name,
-                    actions: item.actions //TODO map actions 
+                    actions: item.actions //TODO map actions
                 }
             })
         });
