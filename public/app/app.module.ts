@@ -10,6 +10,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RolesComponent } from './roles/roles.component';
 import { ActionsComponent } from './actions/actions.component';
+import { UsersComponent } from './users/users.component';
+import { UserDetailsComponent } from './users/userDetails/userDetails.component';
 
 import { RoleService } from './roles/roles.service';
 import { ActionService } from './actions/actions.service';
@@ -21,13 +23,13 @@ import { ActionService } from './actions/actions.service';
 		RouterModule.forRoot([
 			{ path: '', redirectTo: '/roles', pathMatch: 'full' },
 			{ path: 'roles', component: RolesComponent },
-			{ path: 'actions', component: ActionsComponent }
+			{ path: 'users', component: UsersComponent }
 		]),
 		HttpModule//,
 		//InMemoryWebApiModule.forRoot(InMemoryDataService)
 	],
 
-	declarations: [AppComponent, RolesComponent, ActionsComponent],
+	declarations: [AppComponent, RolesComponent, ActionsComponent, UsersComponent, UserDetailsComponent],
 	providers: [RoleService, ActionService],
 	bootstrap: [AppComponent]
 })

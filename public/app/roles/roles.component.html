@@ -2,13 +2,6 @@
     <input #roleName placeholder="Role Name">
     <button (click)="addNewRole(roleName.value); roleName.value=''">Add</button>
 </div>
-<!-- <ul>
-    <li *ngFor="let role of roleList">
-        <div>
-            <span>blablabla</span> {{role.name}}
-        </div>
-    </li>
-</ul> -->
 <actions *ngFor="let role of roleList" [currentRole]="role"></actions>
 
 

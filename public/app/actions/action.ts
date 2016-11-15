@@ -1,11 +1,11 @@
 export class Action {
-	
+	id: string;
 	name: string;
 	pattern: string;
-	get:boolean;
-	put:boolean;
-	post:boolean;
-	delete:boolean;
-	
+	verbGet: boolean = false;
+	verbPut: boolean = false;
+	verbPost: boolean = false;
+	verbDelete: boolean = false;
+
 
 }

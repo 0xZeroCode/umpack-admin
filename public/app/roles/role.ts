@@ -1,6 +1,6 @@
 import { Action } from '../actions/action';
 export class Role {
-	id: number;
+	id: string;
 	name: string;
 	actions: Action[];
 }

@@ -19,7 +19,7 @@ export class ActionsComponent implements OnInit {
 
 	addNewAction(): void {
 
-		this.actionService.create(this.newAction).then(action => {
+		this.actionService.create(this.newAction,this.currentRole.id).then(action => {
 			if (!this.currentRole.actions)
 				this.currentRole.actions = [];
 			return this.currentRole.actions.push(action);
@@ -30,10 +30,10 @@ export class ActionsComponent implements OnInit {
 	ngOnInit(): void {
 		this.newAction.name = '';
 		this.newAction.pattern = '';
-		this.newAction.get = false;
-		this.newAction.put = false;
-		this.newAction.post = false;
-		this.newAction.delete = false;
+		this.newAction.verbGet = false;
+		this.newAction.verbPut = false;
+		this.newAction.verbPost = false;
+		this.newAction.verbDelete = false;
 	}
 }
 

@@ -1,13 +1,20 @@
 var router = require('express').Router();
-
+var db = require('./db');
 
 
 router.post('/', function(req, res, next) {
-    console.log(req.body);
+    db.addActionInRole(req.body.roleId, req.body.action)
+        .then(function(result) {
+            
+            res.send({ data: result });
 
-    //var newAction = { name: 'my new action', pattern: 'api/newaction/*', get:true,post:true,put:true,delete:true };
-    var newAction = req.body;
-    res.send({ data: newAction });
+        })
+        .catch(function(err) {
+            res.status(400).send(err.message);
+        })
+
+    
+
 })
 
 

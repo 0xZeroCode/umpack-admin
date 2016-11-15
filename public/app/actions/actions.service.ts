@@ -13,8 +13,8 @@ export class ActionService {
 
 	}
 
-	create(newAction: Action): Promise<Action> {
-		return this.http.post(this.actionsUrl, JSON.stringify(newAction), { headers: this.headers })
+	create(newAction: Action, roleId: string): Promise<Action> {
+		return this.http.post(this.actionsUrl, JSON.stringify({ action: newAction, roleId: roleId }), { headers: this.headers })
 			.toPromise()
 			.then(res => res.json().data)
 			.catch(this.handleError)

@@ -13,16 +13,16 @@
                 <input [(ngModel)]="newAction.pattern" placeholder="url Pattern">
                 <div>
                     <label>GET :
-                        <input type="checkbox" [(ngModel)]="newAction.get">
+                        <input type="checkbox" [(ngModel)]="newAction.verbGet">
                     </label>
                     <label>POST :
-                        <input type="checkbox" [(ngModel)]="newAction.post">
+                        <input type="checkbox" [(ngModel)]="newAction.verbPost">
                     </label>
                     <label>PUT :
-                        <input type="checkbox" [(ngModel)]="newAction.put">
+                        <input type="checkbox" [(ngModel)]="newAction.verbPut">
                     </label>
                     <label>DELETE :
-                        <input type="checkbox" [(ngModel)]="newAction.delete">
+                        <input type="checkbox" [(ngModel)]="newAction.verbDelete">
                     </label>
                 </div>
                 <button (click)="addNewAction()">add</button>
@@ -31,7 +31,7 @@
                 <li *ngFor="let action of currentRole.actions">
                     <b>{{action.name}}</b>  - {{action.pattern}}
                     <div>
-                       <b>GET</b>:{{action.get}} <b>POST</b>:{{action.post}} <b>PUT</b>:{{action.put}} <b>DELETE</b>:{{action.delete}}
+                       <b>GET</b>:{{action.verbGet}} <b>POST</b>:{{action.verbPost}} <b>PUT</b>:{{action.verbPut}} <b>DELETE</b>:{{action.verbDelete}}
                     </div>
                 </li>
             </ul>
