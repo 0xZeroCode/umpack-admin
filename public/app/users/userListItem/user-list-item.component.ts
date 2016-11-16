@@ -49,4 +49,22 @@ export class UserListItemComponent implements OnInit {
             });
 
     }
+
+    toggleActivationCheckbox() {
+        // checkbox has one way ngModel binding on currentUser.isActivated
+
+        if (this.currentUser.isActivated) { // user deactivation
+            return this.userService.deactivateUser(this.currentUser)
+                .then(() => {
+                    this.currentUser.isActivated = false;
+                });
+        }
+
+        // user activation
+
+        this.userService.activateUser(this.currentUser)
+            .then(() => {
+                this.currentUser.isActivated = true;
+            });
+    }
 }

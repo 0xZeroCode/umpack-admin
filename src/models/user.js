@@ -29,4 +29,12 @@ UserSchema.methods.unassignRole = function(role) {
     this.roles.splice(index, 1); //TODO if user has only one role? what should be done?
 };
 
+UserSchema.methods.activate = function() {
+    this.isActivated = true;
+};
+
+UserSchema.methods.deactivate = function() {
+    this.isActivated = false;
+};
+
 module.exports = mongoose.model('User', UserSchema);

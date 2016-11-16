@@ -35,6 +35,26 @@ router.delete('/:id/roles/:role', function(req, res, next) {
         });
 });
 
+router.put('/:id/activation', function(req, res, next) {
+    userInteractor.activateUser(req.params.id)
+        .then(function() {
+            res.send();
+        })
+        .catch(function(err) {
+            res.status(400).send(err.message);
+        });
+});
+
+router.delete('/:id/activation', function(req, res, next) {
+    userInteractor.deactivateUser(req.params.id)
+        .then(function() {
+            res.send();
+        })
+        .catch(function(err) {
+            res.status(400).send(err.message);
+        });
+});
+
 
 
 module.exports = router;

@@ -37,6 +37,22 @@ export class UserService {
             .catch(this.handleError);
     }
 
+    activateUser(user): Promise<any> {
+        let url = "/api/users/" + user._id + "/activation";
+
+        return this.http.put(url, {}, { headers: this.headers })
+            .toPromise()
+            .catch(this.handleError);
+    }
+
+    deactivateUser(user): Promise<any> {
+        let url = "/api/users/" + user._id + "/activation";
+
+        return this.http.delete(url, { headers: this.headers })
+            .toPromise()
+            .catch(this.handleError);
+    }
+
     handleError(err: any): Promise<any> {
         console.error("error occured", err);
         return Promise.reject(err);

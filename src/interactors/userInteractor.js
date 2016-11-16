@@ -29,9 +29,33 @@ function unassignRoleToUser(id, role) {
         });
 }
 
+function activateUser(id) {
+    return User.findOne({
+            _id: id
+        }).exec()
+        .then(function(user) {
+            user.activate();
+
+            return user.save();
+        });
+}
+
+function deactivateUser(id) {
+    return User.findOne({
+            _id: id
+        }).exec()
+        .then(function(user) {
+            user.deactivate();
+
+            return user.save();
+        });
+}
+
 
 module.exports = {
     getUsers: getUsers,
     assignRoleToUser: assignRoleToUser,
-    unassignRoleToUser: unassignRoleToUser
+    unassignRoleToUser: unassignRoleToUser,
+    activateUser: activateUser,
+    deactivateUser: deactivateUser
 };

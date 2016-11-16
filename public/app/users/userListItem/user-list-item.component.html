@@ -1,5 +1,6 @@
 <div class="user-list-item container">
   <user-details [currentUser]="currentUser"></user-details>
+  <label>isActivated: </label> <input type="checkbox" name="isActivated" [ngModel]="currentUser.isActivated" (change)="toggleActivationCheckbox()"> <br>
   <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" [attr.data-target]="'#' + currentUser.userName + 'Modal'">View Roles</button>
 
   <div class="modal fade" [attr.id]="currentUser.userName + 'Modal'" role="dialog">
